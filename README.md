@@ -34,7 +34,7 @@ Protocol
 The protocol runs over UART at 8N1 38400 bps (I wasn't able to get 115200
     working reliably for some reason).
     
-The stock Arduino board features the ability to reset the AVR using the RTS
+The stock Arduino board features the ability to reset the AVR using the DTR
     line. You can use that to re-initialize the adapter whenever desired.
 
 When it goes ready, a `!` character is output.
