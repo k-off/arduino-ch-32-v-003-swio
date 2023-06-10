@@ -1,7 +1,8 @@
 CH32V003 Arduino SWIO interface
 ===============================
 
-This is a very simple implementation of a SWIO interface for the CH32V003 micro$
+This is a very simple implementation of a SWIO interface for the CH32V003
+    microcontroller.
 
 It is intended to run on a stock Arduino Uno R3 board running at 16 MHz.
 
