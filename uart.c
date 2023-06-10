@@ -7,11 +7,15 @@ FILE uart_file = FDEV_SETUP_STREAM(_uart_putchar, _uart_getchar, _FDEV_SETUP_REA
 FILE *uart = &uart_file;
 
 void uart_init() {
-    // Enable TX.
-    UCSR0B |= _BV(TXEN0) | _BV(RXEN0);
+    // Enable 2X clock.
+    UCSR0A |= _BV(U2X0);
 
     // Set the baud rate divider.
-    UBRR0L = UBRR_VAL;
+    // 16M / 8 / (16 + 1) = 117647 bps (2% error)
+    UBRR0L = 16;
+
+    // Enable TX.
+    UCSR0B |= _BV(TXEN0) | _BV(RXEN0);
 }
 
 int _uart_putchar(char c, FILE *unused) {
