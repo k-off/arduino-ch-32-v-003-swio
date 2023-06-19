@@ -18,7 +18,10 @@ The wiring is simple:
     to prevent overcurrent, because a bus conflict is intentionally created as a
     part of the RX logic.
 
-*   `AVR PB1` (Arduino pin __9__) is used as a reset, connected to `WCH PD7`.
+*   `AVR PB1` (Arduino pin __9__) is used to switch power to the target.
+
+    Without external devices, the microcontroller's current draw should be
+    low enough to be sustained by a simple GPIO.
 
 Building and flashing the AVR
 -----------------------------
@@ -50,11 +53,11 @@ The supported commands are as follows:
     * Arguments: none
     * Response: `+`
 
-* `a` - Assert target reset.
+* `p` - Target power on.
     * Arguments: none
     * Response: `+`
 
-* `A` - Deassert target reset.
+* `P` - Target power off.
     * Arguments: none
     * Response: `+`
 
